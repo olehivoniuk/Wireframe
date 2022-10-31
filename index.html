@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/0747fd1572.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+  </head>
+  <body class="body">
+    <div class="container">
+        <img class="drops" src="src/drops.jpg" alt="drops of water" />
+
+    
+          <h1 class="heading">
+              
+             <br />
+             <span id="tempSwitcher" >21</span>
+                <a href="19" id="celcius">°C</a>
+            
+                 |
+                 <a href="63" id="faringates">°F</a>
+                 
+                 <br />
+ <br>  <span id="curent time " > </span> 
+          </h1>
+<h3 id="currentCity">🌦 Kolomya ,
+    </h3>
+
+          <h2 class="time" id="currentTime" >20:00 GTM+3</h2>
+
+          <form id="citySearch" >
+              <input type="text" placeholder="Enter city" id="dataInput" autocomplete="off" autofocus=on>
+
+              <input type="submit" value="Search">
+          </form>
+<button id="current-button">Current </button>
+          <div class="row1" id="additions">
+            <span id="description">Sunny</span>
+            <br />
+            Humidity -  <span id="humidity">73</span>%  <br />
+             Wind -  <span id="speed">13</span> km/h
+          </div>
+          <div class="row">
+            <div class="col-2">
+                <button class=" daySunday">Sunday</button>
+               <br />
+              ⛈ ⛈ ⛈
+              <br />
+              21° - 12°
+            </div>
+            <div class="col-2">
+                <button class="dayMonday">Monday 1 </button>
+               <br />
+              🌦 🌦 🌦 <br />
+              15°- 11°
+            </div>
+            <div class="col-2"><button class="dayTuesday">Tuesday</button>
+               <br />
+              🌧 🌧 🌧 <br />
+              16° - 8°
+            </div>
+            <div class="col-2"><button class="dayWednesday">Wednesday</button>
+               <br />
+              🌤 🌤 🌤 <br />
+              22° - 15°
+            </div>
+            <div class="col-2"> <button class="dayThursday">Thursday</button>
+               <br />
+              🌧 🌧 🌧 <br />
+              22° - 13°
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<script src="src/index.js"></script>
+  </body>
+</html>

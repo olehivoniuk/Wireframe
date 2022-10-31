@@ -1,0 +1,85 @@
+#citySearch{
+    position: relative;
+    bottom: 670px;
+    left: 70px;
+}
+#currentCity{
+    position: relative;
+    left: 70px;
+    bottom: 540px;
+    color: aliceblue;
+}
+
+#current-button{
+    position: relative;
+    left: 380px;
+    bottom: 700px
+    
+}
+#additions{
+    text-transform: capitalize;
+    color: greenyellow;
+}
+
+.precipitation {
+    color: gold;
+    margin-top: 60px;
+}
+.heading{
+    color: gold;
+    position: relative;
+    bottom: 400px;
+    left: 70px;
+    
+}
+.time{
+    color: aqua;
+    position: relative;
+    bottom: 500px;
+    left: 70px;
+    font-size: 22px;
+}
+.body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.row1{
+
+    position: relative;
+    bottom: 700px;
+    left: 800px;
+}
+.card{
+    margin-top: 50px;
+}
+.row{
+    position: relative; 
+    left: 50px;
+    bottom: 350px;
+    color: gold;
+}
+img{
+    position: relative;
+    top: 100px;
+    background-size: cover;
+    overflow: hidden;
+    max-height: 700px;
+    max-width: 1060px;
+    border-radius: 30px;
+}
+.day{
+    color: gold;
+    background-color:seagreen;
+    border: none;
+    border-radius: 5px;
+    opacity: 0,1;
+}
+.day:hover{
+    transition: all 0.9ms ease-in-out;
+}
+a:link{
+    text-decoration: none;
+}
+   .daySunday, .dayMonday, .dayTuesday, .dayWednesday, .dayThursday {
+       background-color: green;
+       color: aquamarine;
+   }
