@@ -83,3 +83,8 @@ a:link{
        background-color: green;
        color: aquamarine;
    }
+.author{
+    position: relative;
+    bottom: 320px;
+    left: 80px;
+}
