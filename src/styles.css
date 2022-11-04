@@ -8,6 +8,7 @@
     left: 70px;
     bottom: 540px;
     color: aliceblue;
+    font-weight: 900;
 }
 
 #current-button{
@@ -87,4 +88,7 @@ a:link{
     position: relative;
     bottom: 320px;
     left: 80px;
+}
+.drops{
+    max-width: 1000px;
 }
