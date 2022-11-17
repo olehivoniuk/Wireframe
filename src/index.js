@@ -33,7 +33,7 @@ function searchCity (event){
     console.log(apiUrl)
 
     function showTemperature(response){
-        console.log(response)
+        console.log(response.data)
         let weatherDescription = response.data.weather[0].description; 
         let chosenDescriontion = document.querySelector("#description")
         chosenDescriontion.innerHTML = weatherDescription; 
@@ -69,8 +69,9 @@ function searchLocation (position){
     
     let apiKey = "0c82e3d9689abed74d1ce4e8c98ed561";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`
+    console.log(apiUrl)
 function showTemperatureCurrent(response){
-    console.log(response)
+    console.log(response.data)
     let currentCityName = document.querySelector("#currentCity")
     currentCityName.innerHTML = response.data.name ;
 
