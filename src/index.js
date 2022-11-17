@@ -28,13 +28,13 @@ function searchCity (event){
     } else {
         alert("Please type the city")
     }
-    let apiUrl =
-    `https://api.openweathermap.org/data/2.5/weather?q=${seacrhInput.value}&appid=0c82e3d9689abed74d1ce4e8c98ed561&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${seacrhInput.value}&appid=0c82e3d9689abed74d1ce4e8c98ed561&units=metric`;
     console.log(apiUrl)
 
     function showTemperature(response){
-        console.log(response.data)
+        console.log(response.data.weather)
         let weatherDescription = response.data.weather[0].description; 
+        console.log(weatherDescription)
         let chosenDescriontion = document.querySelector("#description")
         chosenDescriontion.innerHTML = weatherDescription; 
         
