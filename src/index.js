@@ -32,7 +32,7 @@ function searchCity (event){
     console.log(apiUrl)
 
     function showTemperature(response){
-        console.log(response.data.weather)
+
         let weatherDescription = response.data.weather[0].description; 
         console.log(weatherDescription)
         let chosenDescriontion = document.querySelector("#description")
@@ -47,9 +47,13 @@ function searchCity (event){
         chosenHumidity.innerHTML = weatherHumidity; 
 
         let windSpeed = response.data.wind.speed;
-        console.log(windSpeed)
         let chosenSpeed = document.querySelector("#speed")
         chosenSpeed.innerHTML = Math.round(windSpeed);
+
+        let iconCurrent = response.data.weather[0].icon;
+let chosenIcon = document.querySelector("#icon");
+chosenIcon.innerHTML = iconCurrent
+
         
 
 
@@ -68,8 +72,7 @@ form.addEventListener("submit", searchCity)
 function searchLocation (position){
     
     let apiKey = "0c82e3d9689abed74d1ce4e8c98ed561";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`
-    console.log(apiUrl)
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 function showTemperatureCurrent(response){
     console.log(response.data)
     let currentCityName = document.querySelector("#currentCity")
