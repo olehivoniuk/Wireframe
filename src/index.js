@@ -59,6 +59,7 @@ function searchCity (event){
 
     }
     axios.get(apiUrl).then(showTemperature);
+  
 
 }
 let form = document.querySelector("#citySearch")
