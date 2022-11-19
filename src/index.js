@@ -94,6 +94,8 @@ function showTemperatureCurrent(response){
         console.log(windSpeedCurrent)
         let chosenSpeedCurrent = document.querySelector("#speed")
         chosenSpeedCurrent.innerHTML = Math.round(windSpeedCurrent);
+        let chosenIcon = document.querySelector("#icon");
+        chosenIcon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperatureCurrent);
 }
