@@ -6,7 +6,7 @@
 #currentCity{
     position: relative;
     left: 70px;
-    bottom: 540px;
+    bottom: 555px;
     color: aliceblue;
     font-weight: 900;
 }
@@ -29,7 +29,7 @@
 .heading{
     color: gold;
     position: relative;
-    bottom: 400px;
+    bottom: 420px;
     left: 70px;
     
 }
@@ -91,4 +91,6 @@ a:link{
 }
 .drops{
     max-width: 1100px;
+    position: relative;
+    top: 150px;
 }
