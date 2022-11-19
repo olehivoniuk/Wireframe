@@ -50,9 +50,9 @@ function searchCity (event){
         let chosenSpeed = document.querySelector("#speed")
         chosenSpeed.innerHTML = Math.round(windSpeed);
 
-        let iconCurrent = response.data.weather[0].icon;
-let chosenIcon = document.querySelector("#icon");
-chosenIcon.innerHTML = iconCurrent
+        
+        let chosenIcon = document.querySelector("#icon");
+        chosenIcon.setAttribute("src", `http://openweathermap.org/img/wn/10d@2x.png`); 
 
         
 
