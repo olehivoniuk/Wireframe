@@ -83,9 +83,9 @@ function showTemperatureCurrent(response){
         let chosenDescriontionCurrent = document.querySelector("#description");
         chosenDescriontionCurrent.innerHTML = weatherDescriptionCurrent; 
 
-        let tempCurrent = response.data.main.temp;
-        let chosenTempCurrent = document.querySelector("#tempSwitcher")
-        chosenTempCurrent.innerHTML =  Math.round(tempCurrent);
+        let temp = response.data.main.temp;
+        let TempCurrent = document.querySelector("#tempSwitcher")
+        TempCurrent.innerHTML =  Math.round(temp);
 
         let weatherHumidityCurrent = response.data.main.humidity;
         let chosenHumidityCurrent = document.querySelector("#humidity")
@@ -116,20 +116,14 @@ currentLocationButton.addEventListener("click", getCurrentLocation)
 
 
 
-
-
-
-function switchTemp(event){
+function displayFahrenheitTemperature(event){
     event.preventDefault();
-    let tempertarure = document.querySelector("#tempSwitcher") ;
-    tempertarure.innerHTML = "19" ;
+    let temp = document.querySelector("#tempSwitcher")
+    let fahrenheitTemperature = (temp.innerHTML * 9)/5 + 32;
+    temp.innerHTML = Math.round(fahrenheitTemperature); 
+
+    
 }
-let tempCelcius = document.querySelector("#celcius");
-tempCelcius.addEventListener("click",switchTemp);
-function changeTemp(event){
-    event.preventDefault();
-    let degrees = document.querySelector("#tempSwitcher");
-    degrees.innerHTML = "63";
-}
-let tempFaringates = document.querySelector("#faringates");
-tempFaringates.addEventListener("click", changeTemp);
+
+let tempFaringates = document.querySelector("#fahrenheit");
+tempFaringates.addEventListener("click", displayFahrenheitTemperature);
