@@ -33,14 +33,17 @@ function searchCity (event){
 
     function showTemperature(response){
 
+
+        celciusTemperature = response.data.main.temp;
+
+        let temp = celciusTemperature;
+        let chosenTemp = document.querySelector("#tempSwitcher")
+        chosenTemp.innerHTML =  Math.round(temp);
+
         let weatherDescription = response.data.weather[0].description; 
-        console.log(weatherDescription)
         let chosenDescriontion = document.querySelector("#description")
         chosenDescriontion.innerHTML = weatherDescription; 
         
-        let temp = response.data.main.temp;
-        let chosenTemp = document.querySelector("#tempSwitcher")
-        chosenTemp.innerHTML =  Math.round(temp);
     
         let weatherHumidity = response.data.main.humidity;
         let chosenHumidity = document.querySelector("#humidity")
@@ -79,13 +82,16 @@ function showTemperatureCurrent(response){
     let currentCityName = document.querySelector("#currentCity")
     currentCityName.innerHTML = response.data.name ;
 
+
+    let temp = response.data.main.temp;
+        let TempCurrent = document.querySelector("#tempSwitcher")
+        TempCurrent.innerHTML =  Math.round(temp);
+
     let weatherDescriptionCurrent = response.data.weather[0].description;
         let chosenDescriontionCurrent = document.querySelector("#description");
         chosenDescriontionCurrent.innerHTML = weatherDescriptionCurrent; 
 
-        let temp = response.data.main.temp;
-        let TempCurrent = document.querySelector("#tempSwitcher")
-        TempCurrent.innerHTML =  Math.round(temp);
+        
 
         let weatherHumidityCurrent = response.data.main.humidity;
         let chosenHumidityCurrent = document.querySelector("#humidity")
@@ -105,25 +111,30 @@ function getCurrentLocation(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchLocation) 
 }
-let currentLocationButton = document.querySelector("#current-button")
-currentLocationButton.addEventListener("click", getCurrentLocation)
-
-
-
-
-
-
-
-
 
 function displayFahrenheitTemperature(event){
     event.preventDefault();
     let temp = document.querySelector("#tempSwitcher")
-    let fahrenheitTemperature = (temp.innerHTML * 9)/5 + 32;
-    temp.innerHTML = Math.round(fahrenheitTemperature); 
+    let fahrenheitTemperature = (celciusTemperature * 9)/5 + 32;
+    temp.innerHTML = Math.round(fahrenheitTemperature);    
+};
 
-    
-}
+function displayCelsiusTemperature(event) {
+    event.preventDefault();
+    let temp = document.querySelector("#tempSwitcher");
+    temp.innerHTML = celciusTemperature;
+};
+
+
+
+let currentLocationButton = document.querySelector("#current-button")
+currentLocationButton.addEventListener("click", getCurrentLocation)
+
+let celciusTemperature = null;
+
 
 let tempFaringates = document.querySelector("#fahrenheit");
 tempFaringates.addEventListener("click", displayFahrenheitTemperature);
+
+let tempCelsius = document.querySelector("#celsius");
+tempCelsius.addEventListener("click", displayCelsiusTemperature);
