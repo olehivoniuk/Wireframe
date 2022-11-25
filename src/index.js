@@ -112,6 +112,11 @@ function getCurrentLocation(event) {
     navigator.geolocation.getCurrentPosition(searchLocation) 
 }
 
+
+
+
+
+
 function displayFahrenheitTemperature(event){
     event.preventDefault();
     let temp = document.querySelector("#tempSwitcher")
@@ -125,13 +130,11 @@ function displayCelsiusTemperature(event) {
     temp.innerHTML = celciusTemperature;
 };
 
+let celciusTemperature = null;
 
 
 let currentLocationButton = document.querySelector("#current-button")
 currentLocationButton.addEventListener("click", getCurrentLocation)
-
-let celciusTemperature = null;
-
 
 let tempFaringates = document.querySelector("#fahrenheit");
 tempFaringates.addEventListener("click", displayFahrenheitTemperature);
