@@ -56,7 +56,7 @@
 .row{
     position: relative; 
     left: 50px;
-    bottom: 350px;
+    bottom: 450px;
     color: gold;
 }
 img{
@@ -68,13 +68,17 @@ img{
     max-width: 1060px;
     border-radius: 30px;
 }
-.day{
+.weather-forecast-date{
     color: gold;
     background-color:seagreen;
     border: none;
     border-radius: 5px;
     opacity: 0,1;
-    padding: 5px;
+    padding: 3px;
+    text-align: center;
+    max-width: 70px;
+    position: relative;
+    top: 1px;
 }
 .day:hover{
     transition: all 0.9ms ease-in-out;
