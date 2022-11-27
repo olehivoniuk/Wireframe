@@ -20,27 +20,21 @@ lineDate.innerHTML = day + " " + hours + ":" + minutes;
      let forecastElement = document.querySelector("#forecast")
 
 let forecastHTML = `<div class="row">`;
- forecastHTML = forecastHTML + `
+
+days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thurday",]; 
+days.forEach(function(day){
+    forecastHTML = forecastHTML + `
 
 <div class="col-2">
-   <div class="weather-forecast-date">Sunday</div>
+   <div class="weather-forecast-date">${day}</div>
    <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="weather image" class="icon1"/>
 <div class="weather-forecast-temperatures">
   <span class="weather-forecast-temperature-max">21° </span>
   <span class="weather-forecast-temperature-min">- 12°</span>
 </div>
-</div>` ,
-
-forecastHTML = forecastHTML + `
-<div class="col-2">
-   <div class="weather-forecast-date">Sunday</div>
-   <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="weather image" class="icon1"/>
-<div class="weather-forecast-temperatures">
-  <span class="weather-forecast-temperature-max">21° </span>
-  <span class="weather-forecast-temperature-min">- 12°</span>
-</div>
-</div>`
-
+</div>` 
+})
+ 
 
 forecastHTML = forecastHTML + `</div>`
 forecastElement.innerHTML = forecastHTML; 
