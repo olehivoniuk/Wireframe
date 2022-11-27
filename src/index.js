@@ -16,6 +16,40 @@ let lineDate = document.querySelector("#currentTime")
 lineDate.innerHTML = day + " " + hours + ":" + minutes;
 
 
+ function displayForecast(){
+     let forecastElement = document.querySelector("#forecast")
+
+let forecastHTML = `<div class="row">`;
+ forecastHTML = forecastHTML + `
+<div class="col-2">
+   <div class="weather-forecast-date">Sunday</div>
+   <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="weather image" class="icon1"/>
+<div class="weather-forecast-temperatures">
+  <span class="weather-forecast-temperature-max">21° </span>
+  <span class="weather-forecast-temperature-min">- 12°</span>
+</div>
+</div>
+</div>` ,
+
+forecastHTML = forecastHTML + `
+<div class="col-2">
+   <div class="weather-forecast-date">Sunday</div>
+   <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="weather image" class="icon1"/>
+<div class="weather-forecast-temperatures">
+  <span class="weather-forecast-temperature-max">21° </span>
+  <span class="weather-forecast-temperature-min">- 12°</span>
+</div>
+</div>
+</div>`
+
+forecastHTML = forecastHTML + `</div>`
+
+
+forecastElement.innerHTML = forecastHTML; 
+     
+ }
+
+
 let apiKey = "0c82e3d9689abed74d1ce4e8c98ed561";
 
 function searchCity (event){
@@ -132,6 +166,7 @@ function displayCelsiusTemperature(event) {
 
 let celciusTemperature = null;
 
+displayForecast();
 
 let currentLocationButton = document.querySelector("#current-button")
 currentLocationButton.addEventListener("click", getCurrentLocation)
@@ -141,3 +176,4 @@ tempFaringates.addEventListener("click", displayFahrenheitTemperature);
 
 let tempCelsius = document.querySelector("#celsius");
 tempCelsius.addEventListener("click", displayCelsiusTemperature);
+
