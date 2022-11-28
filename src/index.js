@@ -152,23 +152,5 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#tempSwitcher");
-  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-  temp.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#tempSwitcher");
-  temp.innerHTML = celciusTemperature;
-}
-
-let celciusTemperature = null;
-
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-
-let tempFaringates = document.querySelector("#fahrenheit");
-tempFaringates.addEventListener("click", displayFahrenheitTemperature);
