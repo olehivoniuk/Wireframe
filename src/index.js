@@ -74,15 +74,21 @@ function getForecast(coordinates) {
 
 function searchCity(event) {
   event.preventDefault();
-  let seacrhInput = document.querySelector("#dataInput");
-
+  let city = document.querySelector("#dataInput").value;
+  searchCity(city);
   let h3 = document.querySelector("h3");
-  if (seacrhInput.value) {
-    h3.innerHTML = seacrhInput.value;
+  if (city) {
+    h3.innerHTML = city;
   } else {
     alert("Please type the city");
   }
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${seacrhInput.value}&appid=0c82e3d9689abed74d1ce4e8c98ed561&units=metric`;
+  searchCity("London");
+
+  function searchCity(city) {
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showTemperature);
+  }
 
   function showTemperature(response) {
     celciusTemperature = response.data.main.temp;
@@ -112,6 +118,7 @@ function searchCity(event) {
   }
   axios.get(apiUrl).then(showTemperature);
 }
+
 let form = document.querySelector("#citySearch");
 form.addEventListener("submit", searchCity);
 
@@ -150,6 +157,13 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temp = document.querySelector("#tempSwitcher");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  temp.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 let currentLocationButton = document.querySelector("#current-button");
