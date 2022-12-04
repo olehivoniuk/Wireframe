@@ -74,22 +74,22 @@ function getForecast(coordinates) {
 
 function searchCity(event) {
   event.preventDefault();
+
   let city = document.querySelector("#dataInput").value;
   searchCity(city);
+
   let h3 = document.querySelector("h3");
   if (city) {
     h3.innerHTML = city;
   } else {
     alert("Please type the city");
   }
-  searchCity("London");
 
   function searchCity(city) {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showTemperature);
   }
-
   function showTemperature(response) {
     celciusTemperature = response.data.main.temp;
 
