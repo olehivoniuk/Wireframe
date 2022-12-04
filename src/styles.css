@@ -7,11 +7,16 @@
     position: relative;
     left: 70px;
     bottom: 555px;
-    color: aliceblue;
+    color: gold;
     font-weight: 900;
 }
 
 #current-button{
+    background-color: green;
+    color: whitesmoke;
+    padding: 3px;
+    border-radius: 8px;
+    border: 0px;
     position: relative;
     left: 380px;
     bottom: 700px
@@ -92,7 +97,7 @@ a:link{
    }
 .author{
     position: relative;
-    bottom: 260px;
+    bottom: 200px;
     left: 80px;
 }
 .drops{
@@ -100,4 +105,5 @@ a:link{
     position: relative;
     top: 150px;
 }
+
 

@@ -41,7 +41,6 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-
 <div class="col-2">
    <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
    <img src="http://openweathermap.org/img/wn/${
@@ -68,22 +67,14 @@ let apiKey = "0c82e3d9689abed74d1ce4e8c98ed561";
 function getForecast(coordinates) {
   let apiKey = "a969311cfcbb4a83dfad2cf7478397f9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
 function searchCity(event) {
   event.preventDefault();
-
   let city = document.querySelector("#dataInput").value;
-  searchCity(city);
 
-  let h3 = document.querySelector("h3");
-  if (city) {
-    h3.innerHTML = city;
-  } else {
-    alert("Please type the city");
-  }
+  searchCity(city);
 
   function searchCity(city) {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -91,8 +82,9 @@ function searchCity(event) {
     axios.get(apiUrl).then(showTemperature);
   }
   function showTemperature(response) {
-    celciusTemperature = response.data.main.temp;
+    document.querySelector("#currentCity").innerHTML = response.data.name;
 
+    celciusTemperature = response.data.main.temp;
     let temp = celciusTemperature;
     let chosenTemp = document.querySelector("#tempSwitcher");
     chosenTemp.innerHTML = Math.round(temp);
@@ -116,7 +108,6 @@ function searchCity(event) {
     );
     getForecast(response.data.coord);
   }
-  axios.get(apiUrl).then(showTemperature);
 }
 
 let form = document.querySelector("#citySearch");
@@ -157,13 +148,6 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#tempSwitcher");
-  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-  temp.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 let currentLocationButton = document.querySelector("#current-button");
